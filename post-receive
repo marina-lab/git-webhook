@@ -3,7 +3,7 @@
 # webhook post_url: this URL is hit with a POST request when you push
 post_url="http://www.postbin.org/q3dil8"
 repo_name="repo"
-base_name="user"
+base_path="user/"
 
 read oldrev newrev refname
 
@@ -71,7 +71,7 @@ $(git diff-tree -r --name-only --diff-filter=D ${newrev} | sed -e '1d' -e 's-.*-
   \"repository\": 
   {
     \"name\": \"${repo_name}\",
-    \"full_name\": \"${base_name}\${repo_name}\"
+    \"full_name\": \"${base_path}${repo_name}\"
   }
 }"
 
